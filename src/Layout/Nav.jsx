@@ -8,14 +8,33 @@ export default function Nav() {
   return (
     <nav className={cls.Nav}>
       <ul className={cls.DesktopNavList}>
-        <li>Главная</li>
-        <li>Министерство</li>
-        <li>Для граждан</li>
-        <li>Услуги</li>
-        <li>Для СМИ</li>
-        <li>Госпрограмма</li>
-        <li>Контакты</li>
-        <li>Политика</li>
+        <li>
+          <a>Главная</a>
+        </li>
+        <li>
+          <a>Министерство</a>
+        </li>
+        <li>
+          <a>Для граждан</a>
+        </li>
+        <li>
+          <a>Услуги</a>
+        </li>
+        <li>
+          <a>Для СМИ</a>
+        </li>
+        <li>
+          <a>Госпрограмма</a>
+        </li>
+        <li>
+          <a href="">Контакты</a>
+        </li>
+        <li>
+          <a href="">Политика</a>
+        </li>
+        <li>
+          <a href="">Рус/Кыр</a>
+        </li>
       </ul>
 
       <div

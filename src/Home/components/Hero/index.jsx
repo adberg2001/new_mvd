@@ -1,6 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
+
 import cls from './Hero.module.scss';
+import HeroSlider from '../HeroSlider';
 
 export default function Hero() {
   return (
@@ -15,13 +17,13 @@ export default function Hero() {
 
         <p>МИНИСТЕРСТВО ВНУТРЕННИХ ДЕЛ КЫРГЫЗСКОЙ РЕСПУБЛИКИ</p>
 
-        <h1>На службе народа</h1>
+        <HeroSlider />
 
-        <ul>
+        {/* <ul>
           <li>Дежурная часть - 102</li>
           <li>Для туристов - 200</li>
           <li>Телефон доверия - 300</li>
-        </ul>
+        </ul> */}
       </div>
     </div>
   );

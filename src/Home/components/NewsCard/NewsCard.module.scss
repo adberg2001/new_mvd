@@ -1,0 +1,16 @@
+@import '../../../../styles/variables';
+
+.root {
+  border-radius: 15px !important;
+
+  a{
+    color: $link-color;
+    &:hover{
+      color: $base-light;
+    }
+  }
+}
+
+.media {
+  height: 177px;
+}
