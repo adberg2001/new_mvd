@@ -4,8 +4,12 @@ import cls from "./Galleries.module.scss";
 const Galleries = () => {
   return (
     <div className={cls.container}>
-      <div />
-      <div />
+      <div>
+        <p>Фотогалерея</p>
+      </div>
+      <div>
+        <p>Видеогалерея</p>
+      </div>
     </div>
   );
 };

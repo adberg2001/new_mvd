@@ -3,6 +3,7 @@ import NewsList from "../NewsList";
 import cls from "./NewsListSection.module.scss";
 import NewsCalendar from "../NewsCalendar";
 import Galleries from "../Galleries";
+import { Button } from "@material-ui/core";
 
 export default function NewsListSection() {
   return (
@@ -15,6 +16,9 @@ export default function NewsListSection() {
           <Galleries />
         </div>
       </div>
+      {/*<Button color="primary" variant="contained">*/}
+      {/*  Еще*/}
+      {/*</Button>*/}
     </section>
   );
 }
