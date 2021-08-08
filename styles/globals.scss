@@ -29,3 +29,34 @@ a {
 ul {
   list-style: none;
 }
+
+button{
+  color: inherit;
+  border: none;
+}
+
+.pagination{
+  button{
+    width: 6rem;
+    height: 3.5rem;
+
+    background: #FFFFFF;
+    border: 1px solid #183F5B;
+    box-sizing: border-box;
+    border-radius: 20px;
+
+    font-weight: bold;
+    font-size: 2.2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0 .2rem;
+    color: #183F5B;
+  }
+
+  .active{
+    background: #183F5B;
+    color: #fff;
+  }
+}

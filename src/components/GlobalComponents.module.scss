@@ -1,0 +1,27 @@
+.base_sheet_row{
+  background: #FAFAFA;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+  padding: 4rem;
+
+  p{
+    font-size: 3rem;
+    line-height: 3.5rem;
+    display: flex;
+    align-items: center;
+    color: #183F5B;
+  }
+
+  button{
+    width: 26.9rem;
+    height: 4.6rem;
+
+    background: #183F5B;
+    border-radius: 15px;
+
+    font-size: 2rem;
+    line-height: 2.4rem;
+
+    color: #FFFFFF;
+  }
+}
