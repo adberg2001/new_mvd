@@ -1,7 +1,7 @@
 .Hero {
   height: 100vh;
   width: 100%;
-  background-image: url('/images/background.png');
+  background-image: url("/images/background.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -19,24 +19,15 @@
     align-items: center;
     padding: 0 15px;
 
-    p {
-      font-size: 24px;
-      max-width: 34ch;
-      color: #fff;
-      line-height: 28px;
-      font-weight: normal;
-      text-align: center;
-      margin-top: 40px;
-    }
-
     h1 {
-      font-size: 48px;
+      font-size: 28px;
       text-align: center;
       font-weight: bold;
       color: #fff;
       margin-top: 50px;
+      max-width: 515px;
       @media only screen and (min-width: 763px) {
-        font-size: 64px;
+        font-size: 28px;
         margin-top: 95px;
       }
     }

@@ -1,8 +1,8 @@
-import React from 'react';
-import Image from 'next/image';
+import React from "react";
+import Image from "next/image";
 
-import cls from './Hero.module.scss';
-import HeroSlider from '../HeroSlider';
+import cls from "./Hero.module.scss";
+import HeroSlider from "../HeroSlider";
 
 export default function Hero() {
   return (
@@ -15,7 +15,7 @@ export default function Hero() {
           height="110"
         />
 
-        <p>МИНИСТЕРСТВО ВНУТРЕННИХ ДЕЛ КЫРГЫЗСКОЙ РЕСПУБЛИКИ</p>
+        <h1>МИНИСТЕРСТВО ВНУТРЕННИХ ДЕЛ КЫРГЫЗСКОЙ РЕСПУБЛИКИ</h1>
 
         <HeroSlider />
 

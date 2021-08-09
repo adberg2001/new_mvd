@@ -19,19 +19,15 @@ export default function NewsCard() {
           title="Contemplative Reptile"
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            Lizard
-          </Typography>
-          <Typography variant="body1" color="textSecondary" component="p">
+          <h2>Lizard</h2>
+          <p>
             Lizards are a widespread group of squamate reptiles, with over 6,000
             species, ranging across all continents except Antarctica
-          </Typography>
+          </p>
         </CardContent>
       </CardActionArea>
       <CardActions className="d-flex justify-content-between mb-3">
-        <Typography variant="body2" className="ps-2">
-          20.02.2012
-        </Typography>
+        <p className="ps-2">20.02.2012</p>
         <a className="pe-2" href="#">
           Преступления
         </a>
