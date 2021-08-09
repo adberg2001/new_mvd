@@ -1,0 +1,53 @@
+.base_sheet_row {
+  background: #fafafa;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+  padding: 30px;
+
+  p {
+    font-size: 25px;
+    line-height: 3rem;
+    display: flex;
+    align-items: center;
+    color: #183f5b;
+
+    @media only screen and (max-width: 1280px) {
+      font-size: 20px;
+      max-width: 400px;
+      line-height: 2rem;
+    }
+    @media only screen and (max-width: 768px) {
+      font-size: 16px;
+    }
+  }
+  @media only screen and (max-width: 768px) {
+    padding: 20px;
+  }
+
+  button {
+    width: 300px;
+    height: 50px;
+    border: none;
+
+    @media only screen and (max-width: 1280px) {
+      width: 250px;
+      font-size: 18px;
+      padding: 5px 10px;
+    }
+
+    @media only screen and (max-width: 768px) {
+      margin-top: 20px;
+      font-size: 14px;
+      width: 180px;
+      align-self: flex-end;
+    }
+
+    background: #183f5b;
+    border-radius: 15px;
+
+    font-size: 24px;
+    line-height: 2.4rem;
+
+    color: #ffffff;
+  }
+}

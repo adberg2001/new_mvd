@@ -1,10 +1,10 @@
-import React from "react";
-import Hero from "./components/Hero";
-import NewsListSection from "./components/NewsListSection";
-import Rubrics from "./components/Rubrics";
-import Footer from "../Layout/Footer";
-import Services from "./components/Services";
-import TerritorySection from "./components/Territory";
+import React from 'react';
+import Hero from './components/Hero';
+import NewsListSection from './components/NewsListSection';
+import Rubrics from './components/Rubrics';
+import Footer from '../Layout/Footer';
+import Services from './components/Services';
+import TerritorySection from './components/Territory';
 
 export default function Home() {
   return (
@@ -14,7 +14,6 @@ export default function Home() {
       <Services />
       <Rubrics />
       <TerritorySection />
-      <Footer />
     </>
   );
 }
