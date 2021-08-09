@@ -1,20 +1,31 @@
 .news_detail {
   padding: 95px 0 0;
 
-  &__head {
-    margin: 18.2rem 0 1.7rem;
-    p {
-      font-size: 2.4rem;
-      line-height: 2.8rem;
+  h2 {
+    @media only screen and (max-width: 550px) {
+      margin-bottom: 0;
+    }
+  }
 
-      color: #183F5B;
+  &__head {
+    margin: 60px auto;
+    p {
+      font-size: 24px;
+      color: #183f5b;
+      @media only screen and (max-width: 550px) {
+        font-size: 16px;
+      }
     }
   }
 
   &__swiper_wrapper {
-    height: 45rem;
     position: relative;
     overflow: hidden;
+    margin-bottom: 50px;
+
+    @media only screen and (max-width: 550px) {
+      margin-bottom: 0;
+    }
 
     --swiper-navigation-color: #fff;
     --swiper-theme-color: #fff;
@@ -22,10 +33,10 @@
     & > div:first-child {
       position: static !important;
 
-      & > div:last-child{
+      & > div:last-child {
         height: unset;
 
-        div{
+        div {
           height: unset;
         }
       }
@@ -34,24 +45,25 @@
 
   &__swiper_img {
     height: 100%;
+    width: 100% !important;
+    height: 420px !important;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 
-    div {
-      position: unset !important;
-
-      img {
-        object-fit: cover;
-        width: 100% !important;
-        position: relative !important;
-        height: unset !important;
-        border-radius: 10px;
-      }
+    @media only screen and (max-width: 963px) {
+      height: 200px !important;
     }
   }
 
   &__description {
-    font-size: 2.4rem;
-    line-height: 2.8rem;
+    font-size: 24px;
+    line-height: 28px;
     white-space: pre-line;
-    color: #183F5B;
+    color: #183f5b;
+    @media only screen and (max-width: 550px) {
+      font-size: 16px;
+      line-height: 22px;
+    }
   }
 }
