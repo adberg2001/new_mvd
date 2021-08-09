@@ -7,7 +7,7 @@ import { Button } from "@material-ui/core";
 
 export default function NewsListSection() {
   return (
-    <section className={[cls.section, "container"].join(" ")}>
+    <section className={[cls.section, "container", "section"].join(" ")}>
       <h2 className={"section__heading"}>Важные новости</h2>
       <div className={cls.contentWrapper}>
         <NewsList />

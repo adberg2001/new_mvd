@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Rubrics() {
   return (
-    <section className={[cls.container, "container"].join(" ")}>
+    <section className={[cls.container, "container", "section"].join(" ")}>
       <h2 className={"section__heading"}>Рубрики</h2>
 
       <div className={[cls.container__rubrics].join(" ")}>

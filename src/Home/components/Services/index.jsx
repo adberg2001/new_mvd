@@ -20,7 +20,7 @@ SwiperCore.use([Navigation]);
 
 const Services = () => {
   return (
-    <section className={cls.Container}>
+    <section className={[cls.Container, "section"].join(" ")}>
       <h2 className={"section__heading"}>Услуги</h2>
       <Swiper navigation={true} className="mySwiper">
         <SwiperSlide>

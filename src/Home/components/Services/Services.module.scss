@@ -22,6 +22,10 @@
       font-size: 32px;
       color: #183f5b;
       font-weight: normal;
+
+      @media only screen and (max-width: 763px) {
+        font-size: 20px;
+      }
     }
   }
 }
