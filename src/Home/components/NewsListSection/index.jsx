@@ -8,10 +8,10 @@ import { Button } from "@material-ui/core";
 export default function NewsListSection() {
   return (
     <section className={[cls.section, "container"].join(" ")}>
-      <h2 className={cls.heading}>Важные новости</h2>
+      <h2 className={"section__heading"}>Важные новости</h2>
       <div className={cls.contentWrapper}>
         <NewsList />
-        <div className="d-flex flex-column mt-5">
+        <div className="d-flex flex-column mt-5 ml-2">
           <NewsCalendar />
           <Galleries />
         </div>

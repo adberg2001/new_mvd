@@ -1,19 +1,20 @@
 import React from "react";
-import cls from './Footer.module.scss'
+import cls from "./Footer.module.scss";
 import Image from "next/image";
+import { Typography } from "@material-ui/core";
 
-export default function FooterHero(){
-
+export default function FooterHero() {
   return (
     <div className={cls.footer__hero}>
       <Image
-        src='/images/logo_mvd.svg'
-        alt='logo_mvd.svg'
-        width='150'
-        height='150'/>
-      <h3 className={`ms-5`}>
-        МИНИСТЕРСТВО ВНУТРЕННИХ ДЕЛ <br/> КЫРГЫЗСКОЙ РЕСПУБЛИКИ
-      </h3>
+        src="/images/logo_mvd.svg"
+        alt="logo_mvd.svg"
+        width="150"
+        height="150"
+      />
+      <Typography variant={"h3"} className={`ms-5`}>
+        МИНИСТЕРСТВО ВНУТРЕННИХ ДЕЛ <br /> КЫРГЫЗСКОЙ РЕСПУБЛИКИ
+      </Typography>
     </div>
-  )
+  );
 }

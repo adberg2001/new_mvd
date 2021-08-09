@@ -1,4 +1,4 @@
-.DesktopCalendar{
+.DesktopCalendar {
   width: 320px;
 
   @media only screen and (max-width: 1080px) {
@@ -6,16 +6,13 @@
   }
 }
 
-.MobileDesktop{
+.MobileDesktop {
   display: none;
   @media only screen and (max-width: 1080px) {
     display: block;
     position: absolute;
     width: 50%;
     left: 20px;
-    top: 150px;
-  }
-  @media only screen and (max-width: 429px) {
-    top: 200px;
+    top: 120px;
   }
 }

@@ -1,7 +1,7 @@
 @import "styles/variables";
 
 .footer {
-  margin: 12rem 0 0;
+  margin: 5rem 0 0;
 
   nav {
     padding: 3.7rem;
@@ -10,7 +10,7 @@
     color: #ffffff;
 
     a {
-      font-size: 2rem;
+      font-size: 1.125rem;
     }
 
     .social_icons {
@@ -19,49 +19,85 @@
   }
 
   &__cont_wrapper {
-    padding: 8.3rem;
+    padding: 4rem;
     background: rgba(24, 63, 91, 1);
   }
 
   &__hero {
     display: flex;
     align-items: center;
+    padding-left: 20px;
 
     h3 {
       margin: 0;
       font-weight: 500;
-      font-size: 2.8rem;
-      line-height: 3.3rem;
-      color: #FFFFFF;
+      font-size: 1.75rem;
+      line-height: 2rem;
+      color: #ffffff;
+
+      @media only screen and (max-width: 450px) {
+        max-width: 80%;
+      }
+
+      @media only screen and (max-width: 756px) {
+        margin-left: 0 !important;
+        margin-top: 30px;
+        text-align: center;
+        max-width: 320px;
+      }
+    }
+
+    @media only screen and (max-width: 756px) {
+      flex-direction: column;
+      padding-left: 0;
+      margin-bottom: 30px;
     }
   }
-
   &__contacts {
     display: grid;
-    grid-template: repeat(5, 1fr) / 1fr 1fr;
-    padding: 8.3rem 0;
-    grid-gap: 3rem;
+    padding: 5.3rem 0;
+    grid-row-gap: 5rem;
+    grid-column-gap: 2.25rem;
+
+    @media only screen and (min-width: 450px) {
+      grid-template: 0.25fr 0.5fr 1fr / repeat(2, 0.75fr);
+    }
 
     @media only screen and (min-width: 756px) {
-      grid-template: 1fr 1fr 1fr / repeat(4, 1fr);
+      justify-content: space-between;
+      grid-template: 0.25fr 0.5fr 1fr / repeat(3, 0.75fr);
     }
-    @media only screen and (min-width: 1080px) {
-      grid-template: 1fr 1fr / repeat(5, 1fr);
+
+    @media only screen and (min-width: 1050px) {
+      grid-template: 0.25fr / repeat(3, 1fr);
+      grid-row-gap: 4rem;
+    }
+    @media only screen and (min-width: 1250px) {
+      grid-template: 0.2fr / repeat(5, 1fr);
     }
 
     div {
       display: flex;
       flex-direction: column;
       align-items: center;
+
+      div {
+        max-width: 250px;
+        margin-top: 20px;
+        @media only screen and (min-width: 1250px) {
+          margin-top: 30px;
+        }
+      }
     }
 
-    p, a {
-      font-weight: 600;
-      font-size: 1.5rem;
-      text-align: center;
-      line-height: 1.8rem;
+    p,
+    a {
       margin: 0;
-      color: #FFFFFF;
+      max-width: 180px;
+      text-align: center;
+      font-size: 15px;
+      line-height: 18px;
+      color: #ffffff;
     }
 
     a:hover {
@@ -70,14 +106,19 @@
   }
 
   &__copyright {
-    font-size: 1.5rem;
-    line-height: 1.8rem;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: #FFFFFF;
+    font-size: 1.125rem;
+    color: #ffffff;
     background-color: #010b1f;
-    padding: 2.5rem 0;
+    padding: 2.5rem 20px;
+    p {
+      text-align: center;
+      margin-bottom: 0 !important;
+      @media only screen and (max-width: 756px) {
+        max-width: 80%;
+      }
+    }
   }
 }

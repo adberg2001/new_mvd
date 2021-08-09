@@ -1,16 +1,25 @@
-@import '../../../../styles/variables';
+@import "../../../../styles/variables";
 
 .root {
   border-radius: 15px !important;
 
-  a{
+  h2 {
+    font-size: 18px;
+  }
+
+  p {
+    font-size: 13px;
+  }
+
+  a {
+    font-size: 13px;
     color: $link-color;
-    &:hover{
+    &:hover {
       color: $base-light;
     }
   }
 }
 
 .media {
-  height: 177px;
+  height: 184px;
 }
