@@ -1,7 +1,4 @@
 import React from "react";
-import Grid from "@material-ui/core/Grid";
-import { Card } from "@material-ui/core";
-import Image from "next/image";
 import cls from "./Services.module.scss";
 
 // Import Swiper React components
@@ -14,29 +11,90 @@ import SwiperCore, { Navigation } from "swiper/core";
 import "swiper/swiper.min.css";
 import "swiper/components/navigation/navigation.min.css";
 import ServiceCard from "./ServiceCard";
+import useWindowSize from "../../../../hooks/useWindowSize";
 
 // install Swiper modules
 SwiperCore.use([Navigation]);
 
+const breakPoints = {
+  400: {
+    slidesPerView: 1,
+    spaceBetween: 0,
+  },
+  828: {
+    slidesPerView: 2,
+    spaceBetween: 0,
+  },
+  1280: {
+    slidesPerView: 3,
+    spaceBetween: 40,
+  },
+};
+
+const services = [
+  {
+    id: 0,
+  },
+  {
+    id: 1,
+  },
+  {
+    id: 2,
+  },
+  {
+    id: 3,
+  },
+  {
+    id: 4,
+  },
+  {
+    id: 5,
+  },
+  {
+    id: 6,
+  },
+];
+
+const renderDesktopSlides = (services) => {
+  const slides = [];
+  for (let i = 0; i < services.length; i += 2) {
+    slides.push(
+      <SwiperSlide key={services[i].id}>
+        <div className={"d-flex flex-column align-items-center"}>
+          <ServiceCard />
+        </div>
+        {!!services[i + 1] && (
+          <div
+            key={services[i].id}
+            className={"d-flex flex-column align-items-center"}
+          >
+            <ServiceCard />
+          </div>
+        )}
+      </SwiperSlide>
+    );
+  }
+  return slides;
+};
+
+const renderMobileSlides = (services) => {
+  return services.map((service) => (
+    <SwiperSlide key={services.id}>
+      <ServiceCard />
+    </SwiperSlide>
+  ));
+};
+
 const Services = () => {
+  const windowSize = useWindowSize();
+
   return (
     <section className={[cls.Container, "section"].join(" ")}>
       <h2 className={"section__heading"}>Услуги</h2>
-      <Swiper navigation={true} className="mySwiper">
-        <SwiperSlide>
-          <Grid container justifyContent="center" spacing={3}>
-            {[0, 1, 2, 3, 4, 5].map((item) => (
-              <ServiceCard key={item} />
-            ))}
-          </Grid>
-        </SwiperSlide>
-        <SwiperSlide>
-          <Grid container justifyContent="center" spacing={3}>
-            {[0, 1, 2, 3, 4, 5].map((item) => (
-              <ServiceCard key={item} />
-            ))}
-          </Grid>
-        </SwiperSlide>
+      <Swiper breakpoints={breakPoints} navigation={true} className="mySwiper">
+        {windowSize > 828
+          ? renderDesktopSlides(services)
+          : renderMobileSlides(services)}
       </Swiper>
     </section>
   );

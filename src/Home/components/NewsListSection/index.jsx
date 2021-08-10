@@ -16,9 +16,6 @@ export default function NewsListSection() {
           <Galleries />
         </div>
       </div>
-      <Button className={cls.Btn} color="primary" variant="contained">
-        Еще
-      </Button>
     </section>
   );
 }
