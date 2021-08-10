@@ -1,6 +1,6 @@
 import React from "react";
-import Image from "next/image";
 import cls from "./Territory.module.scss";
+import Map from "./Map";
 
 const TerritorySection = () => {
   return (
@@ -10,13 +10,7 @@ const TerritorySection = () => {
       </h2>
 
       <div className={"d-flex flex-column align-items-center flex-lg-row"}>
-        <Image
-          src={"/images/kg_map.png"}
-          width={"903"}
-          height={"482"}
-          objectFit={"contain"}
-          alt={"kg_map"}
-        />
+        <Map />
 
         <div className={cls.mapInfo}>
           <h4>Иссык-Кульская область</h4>

@@ -1,4 +1,4 @@
-@import '../../styles/variables';
+@import "../../styles/variables";
 
 .Nav {
   height: 95px;
@@ -9,6 +9,10 @@
   padding: 0 15px;
   position: fixed;
   z-index: 1000;
+
+  @media only screen and (max-width: 963px) {
+    height: 50px;
+  }
 
   .DesktopNavList {
     @media only screen and (max-width: 963px) {
@@ -31,8 +35,8 @@
 
   .BurgerMenuBtn {
     display: none;
-    width: 40px;
-    height: 24px;
+    width: 30px;
+    height: 20px;
     cursor: pointer;
 
     @media only screen and (max-width: 963px) {
@@ -49,7 +53,7 @@
       box-shadow: rgba(0, 0, 0, 0.25) 0 14px 28px,
         rgba(0, 0, 0, 0.22) 0 10px 10px;
       width: 100%;
-      height: 3px;
+      height: 2px;
       background-color: #fff;
       transition: all 300ms ease;
       transform: translateX(0);
@@ -59,7 +63,7 @@
   .BurgerMenuBtnActive {
     span {
       &:nth-child(1) {
-        transform: rotate(-45deg) translate(-5px, 8px);
+        transform: rotate(-45deg) translate(-6px, 6px);
       }
 
       &:nth-child(2) {
@@ -67,7 +71,7 @@
       }
 
       &:nth-child(3) {
-        transform: rotate(45deg) translate(-6px, -9px);
+        transform: rotate(45deg) translate(-6px, -7px);
       }
     }
   }
@@ -84,7 +88,7 @@
     position: absolute;
     right: -10px;
     transform: translateX(100%);
-    top: 105px;
+    top: 70px;
     flex-direction: column;
     transition: transform 100ms ease-in;
 

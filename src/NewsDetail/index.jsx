@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import 'swiper/swiper.min.css';
-import 'swiper/components/navigation/navigation.min.css';
-import cls from './NewsDetail.module.scss';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import React, { useEffect, useState } from "react";
+import "swiper/swiper.min.css";
+import "swiper/components/navigation/navigation.min.css";
+import cls from "./NewsDetail.module.scss";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 // import Swiper core and required modules
-import SwiperCore, { Navigation } from 'swiper/core';
-import Image from 'next/image';
+import SwiperCore, { Navigation } from "swiper/core";
+import Image from "next/image";
 
 // install Swiper modules
 SwiperCore.use([Navigation]);
@@ -16,9 +16,9 @@ function formatDate(notFormattedDate) {
     d = date.getDate(),
     m = date.getMonth(),
     y = date.getFullYear();
-  return `${d.toString().padStart(2, '0')}.${m
+  return `${d.toString().padStart(2, "0")}.${m
     .toString()
-    .padStart(2, '0')}.${y}`;
+    .padStart(2, "0")}.${y}`;
 }
 
 export default function NewsDetailComponent({
@@ -42,7 +42,7 @@ export default function NewsDetailComponent({
         <p className={`m-0`}>{news_type}</p>
       </div>
 
-      <h2 style={{ textAlign: 'start' }} className={`section__heading`}>
+      <h2 style={{ textAlign: "start" }} className={`section__heading`}>
         {title}
       </h2>
 
@@ -54,7 +54,7 @@ export default function NewsDetailComponent({
                 <div
                   style={{ backgroundImage: `url('${image}')` }}
                   className={cls.news_detail__swiper_img}
-                ></div>
+                />
               </SwiperSlide>
             ))}
         </Swiper>
