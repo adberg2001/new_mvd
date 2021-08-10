@@ -18,6 +18,10 @@
       display: grid;
       grid-gap: 21px;
 
+      div {
+        cursor: pointer;
+      }
+
       @media only screen and (min-width: 786px) and (max-width: 1080px) {
         &:nth-child(1) {
           grid-area: first;
