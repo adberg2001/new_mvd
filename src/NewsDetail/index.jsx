@@ -3,23 +3,9 @@ import 'swiper/swiper.min.css';
 import 'swiper/components/navigation/navigation.min.css';
 import cls from './NewsDetail.module.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-// import Swiper core and required modules
 import SwiperCore, { Navigation } from 'swiper/core';
-import Image from 'next/image';
-
-// install Swiper modules
+import {formatDate} from "../../utils/utils";
 SwiperCore.use([Navigation]);
-
-function formatDate(notFormattedDate) {
-  const date = new Date(notFormattedDate),
-    d = date.getDate(),
-    m = date.getMonth(),
-    y = date.getFullYear();
-  return `${d.toString().padStart(2, '0')}.${m
-    .toString()
-    .padStart(2, '0')}.${y}`;
-}
 
 export default function NewsDetailComponent({
   date,
@@ -54,7 +40,7 @@ export default function NewsDetailComponent({
                 <div
                   style={{ backgroundImage: `url('${image}')` }}
                   className={cls.news_detail__swiper_img}
-                ></div>
+                />
               </SwiperSlide>
             ))}
         </Swiper>
