@@ -4,7 +4,7 @@ import Image from "next/image";
 import cls from "./Hero.module.scss";
 import HeroSlider from "../HeroSlider";
 
-export default function Hero() {
+export default function Hero({on_main_slider}) {
   return (
     <div className={cls.Hero}>
       <div className={cls.HeroContent}>
@@ -17,7 +17,8 @@ export default function Hero() {
 
         <h1>МИНИСТЕРСТВО ВНУТРЕННИХ ДЕЛ КЫРГЫЗСКОЙ РЕСПУБЛИКИ</h1>
 
-        <HeroSlider />
+        <HeroSlider on_main_slider={on_main_slider}/>
+
       </div>
     </div>
   );
