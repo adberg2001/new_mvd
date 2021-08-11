@@ -22,4 +22,23 @@
 
 .media {
   height: 184px;
+
+  &__description{
+    height: 100px;
+    *{
+      display: none;
+    }
+    p{
+      margin-bottom: 0 !important;
+      display: none;
+      &:first-child{
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 5; /* number of lines to show */
+        -webkit-box-orient: vertical;
+      }
+    }
+  }
 }

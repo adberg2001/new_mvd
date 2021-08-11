@@ -1,11 +1,15 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import { Calendar } from "@material-ui/pickers";
 import { DatePicker } from "@material-ui/pickers";
 
 import cls from "./Calendar.module.scss";
 
-const NewsCalendar = () => {
+const NewsCalendar = ({onCalendarChange, setTouched}) => {
   const [date, setDate] = useState(new Date());
+  useEffect(() => {
+    setTouched(true)
+    onCalendarChange(date)
+  }, [date])
 
   return (
     <>

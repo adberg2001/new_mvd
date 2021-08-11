@@ -12,7 +12,6 @@ SwiperCore.use([EffectCoverflow, Pagination]);
 
 export default function HeroSlider({on_main_slider}) {
   const {results} = on_main_slider;
-  console.log(results)
 
   return (
     <div className={cls.heroSlider}>
@@ -36,22 +35,22 @@ export default function HeroSlider({on_main_slider}) {
         className={cls.swiperContainer}
       >
         {
-          results.map(({images, id, title}) => {
+          !!results.length && results.map(({images, id, title}) => {
             return (
               <SwiperSlide key={id} className={cls.swiperSlide}>
                 {({isActive}) => (
                   <>
                     <div
-                      className={`${cls.swiperSlide__img} ${isActive ? cls.swiperSlide__img__active : ''}`}
+                      className={`${cls.swiperSlide__img}`}
                       style={{backgroundImage: `url(${images[0].image})`}}/>
-                    <div className={cls.swiperSlide__detail}>
+                    {isActive && <div className={cls.swiperSlide__detail}>
                       <p className={`m-0`}>{formatDate(images[0].created)}</p>
                       <p className={`m-0`}>
                         {title.length > 20 ?
                           title.slice(0, 35) + '...' : title
                         }
                       </p>
-                    </div>
+                    </div>}
                   </>
                 )}
               </SwiperSlide>

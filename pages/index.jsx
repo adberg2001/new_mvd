@@ -4,25 +4,24 @@ import axios from "axios";
 import {BASE_URL} from "../api/api";
 
 //data: {on_main_slider}
-function HomePage({on_main_slider}) {
+function HomePage({on_main_slider, last_news}) {
 
   return (
     <Layout>
-      <Home on_main_slider={on_main_slider}/>
+      <Home on_main_slider={on_main_slider} last_news={last_news}/>
     </Layout>
   );
 }
 
 // This function gets called at build time
 export async function getServerSideProps() {
-  // Call an external API endpoint to get posts
-  const { data: on_main_slider } = await axios.get(`${BASE_URL}/?on_main_slider=true`);
+  const { data: on_main_slider } = await axios.get(`${BASE_URL}/news/?on_main_slider=true`);
+  const { data: last_news } = await axios.get(`${BASE_URL}/news`);
 
-  // By returning { props: { posts } }, the Blog component
-  // will receive `posts` as a prop at build time
   return {
     props: {
       on_main_slider,
+      last_news,
     }
   }
 }
