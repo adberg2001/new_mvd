@@ -6,14 +6,14 @@ import Services from "./components/Services";
 import TerritorySection from "./components/Territory";
 
 //props: {on_main_slider}
-export default function Home({on_main_slider}) {
+export default function Home({ on_main_slider, services, initialRegion }) {
   return (
     <>
-      <Hero on_main_slider={on_main_slider}/>
+      <Hero on_main_slider={on_main_slider} />
       <NewsListSection />
-      <Services />
+      <Services services={services} />
       <Rubrics />
-      <TerritorySection />
+      <TerritorySection initialRegion={initialRegion} />
     </>
   );
 }

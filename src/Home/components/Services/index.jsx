@@ -31,29 +31,15 @@ const breakPoints = {
   },
 };
 
-const services = [
-  {
-    id: 0,
-  },
-  {
-    id: 1,
-  },
-  {
-    id: 2,
-  },
-  {
-    id: 3,
-  },
-  {
-    id: 4,
-  },
-  {
-    id: 5,
-  },
-  {
-    id: 6,
-  },
-];
+// const services = [
+//   { id: 1 },
+//   { id: 2 },
+//   { id: 3 },
+//   { id: 4 },
+//   { id: 5 },
+//   { id: 6 },
+//   { id: 7 },
+// ];
 
 const renderDesktopSlides = (services) => {
   const slides = [];
@@ -61,14 +47,14 @@ const renderDesktopSlides = (services) => {
     slides.push(
       <SwiperSlide key={services[i].id}>
         <div className={"d-flex flex-column align-items-center"}>
-          <ServiceCard />
+          <ServiceCard data={services[i]} />
         </div>
         {!!services[i + 1] && (
           <div
             key={services[i].id}
             className={"d-flex flex-column align-items-center"}
           >
-            <ServiceCard />
+            <ServiceCard data={services[i + 1]} />
           </div>
         )}
       </SwiperSlide>
@@ -79,17 +65,17 @@ const renderDesktopSlides = (services) => {
 
 const renderMobileSlides = (services) => {
   return services.map((service) => (
-    <SwiperSlide key={services.id}>
-      <ServiceCard />
+    <SwiperSlide key={service.id}>
+      <ServiceCard data={service} />
     </SwiperSlide>
   ));
 };
 
-const Services = () => {
+const Services = ({ services }) => {
   const windowSize = useWindowSize();
 
   return (
-    <section className={[cls.Container, "section"].join(" ")}>
+    <section className={[cls.Container, "section"].join(" ")} id={"services"}>
       <h2 className={"section__heading"}>Услуги</h2>
       <Swiper breakpoints={breakPoints} navigation={true} className="mySwiper">
         {windowSize > 828
