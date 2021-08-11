@@ -5,7 +5,7 @@ import cls from "./NewsList.module.scss";
 import {Button} from "@material-ui/core";
 
 export default function NewsList({news}) {
-console.log(news)
+
   return (
     <div className={cls.container}>
       <Grid container justifyContent="center" spacing={3}>

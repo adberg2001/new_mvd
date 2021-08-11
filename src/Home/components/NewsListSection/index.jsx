@@ -12,8 +12,6 @@ export default function NewsListSection({last_news}) {
   const [filtratedNews, setFiltratedNews] = useState([]);
   const {results} = last_news;
 
-  console.log(touched)
-
   const onCalendarChange = async (_date) => {
     const d = `${_date.getDate().toString().padStart(2, '0')}`;
     const m = `${(_date.getMonth() + 1).toString().padStart(2, '0')}`;
@@ -31,7 +29,7 @@ export default function NewsListSection({last_news}) {
       <div className={cls.contentWrapper}>
         <NewsList news={touched ? filtratedNews : results}/>
         <div className="d-flex flex-column mt-5 ml-2">
-          <NewsCalendar setTouched={setTouched} onCalendarChange={onCalendarChange}/>
+          <NewsCalendar touched={touched} setTouched={setTouched} onCalendarChange={onCalendarChange}/>
           <Galleries/>
         </div>
       </div>
