@@ -4,7 +4,13 @@ import axios from 'axios';
 import { BASE_URL } from '../api/api';
 
 //data: {on_main_slider}
-function HomePage({ on_main_slider, services, initialRegion, last_news }) {
+function HomePage({
+  on_main_slider,
+  services,
+  initialRegion,
+  last_news,
+  links,
+}) {
   return (
     <Layout>
       <Home
@@ -12,6 +18,7 @@ function HomePage({ on_main_slider, services, initialRegion, last_news }) {
         services={services}
         initialRegion={initialRegion}
         last_news={last_news}
+        links={links}
       />
     </Layout>
   );
@@ -31,12 +38,19 @@ export async function getServerSideProps() {
 
   const { data: last_news } = await axios.get(`${BASE_URL}/news`);
 
+  const {
+    data: { results: links },
+  } = await axios.get(`${BASE_URL}/links`);
+
+  console.log('serverLinks: ', links);
+
   return {
     props: {
       on_main_slider,
       services,
       initialRegion,
       last_news,
+      links,
     },
   };
 }

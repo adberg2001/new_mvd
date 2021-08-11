@@ -1,10 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;700&display=swap');
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: "Raleway", sans-serif !important;
+  font-family: 'Raleway', sans-serif !important;
   font-size: 12px;
 
   @media only screen and (min-width: 1080px) {
@@ -40,6 +40,16 @@ ul {
   background-color: #183f5b !important;
   color: #fff !important;
   &::after {
-    font-size: 25px !important;
+    font-size: 23px !important;
   }
+}
+
+.swiper-button-next,
+.swiper-container-rtl .swiper-button-prev {
+  top: 45% !important;
+}
+
+.swiper-button-prev,
+.swiper-container-rtl .swiper-button-next {
+  top: 45% !important;
 }
