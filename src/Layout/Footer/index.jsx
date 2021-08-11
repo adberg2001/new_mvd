@@ -6,7 +6,7 @@ import FooterContacts from "./FooterContacts";
 
 export default function Footer() {
   return (
-    <footer className={cls.footer}>
+    <footer className={cls.footer} id={"footer"}>
       <FooterNav />
       <div className={cls.footer__cont_wrapper}>
         <FooterHero />

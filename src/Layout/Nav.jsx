@@ -1,6 +1,7 @@
-import React from 'react';
-import { useState } from 'react';
-import cls from './Layout.module.scss';
+import React from "react";
+import { useState } from "react";
+import cls from "./Layout.module.scss";
+import Link from "next/link";
 
 export default function Nav() {
   const [isBurgerMenuActive, setBurgerMenuActive] = useState(false);
@@ -9,7 +10,9 @@ export default function Nav() {
     <nav className={cls.Nav}>
       <ul className={cls.DesktopNavList}>
         <li>
-          <a>Главная</a>
+          <Link href={"/"}>
+            <a>Главная</a>
+          </Link>
         </li>
         <li>
           <a>Министерство</a>
@@ -18,7 +21,7 @@ export default function Nav() {
           <a>Для граждан</a>
         </li>
         <li>
-          <a>Услуги</a>
+          <a href="#services">Услуги</a>
         </li>
         <li>
           <a>Для СМИ</a>
@@ -27,7 +30,7 @@ export default function Nav() {
           <a>Госпрограмма</a>
         </li>
         <li>
-          <a href="">Контакты</a>
+          <a href="#footer">Контакты</a>
         </li>
         <li>
           <a href="">Политика</a>
@@ -41,8 +44,8 @@ export default function Nav() {
         onClick={() => setBurgerMenuActive(!isBurgerMenuActive)}
         className={[
           cls.BurgerMenuBtn,
-          isBurgerMenuActive ? cls.BurgerMenuBtnActive : '',
-        ].join(' ')}
+          isBurgerMenuActive ? cls.BurgerMenuBtnActive : "",
+        ].join(" ")}
       >
         <span></span>
         <span></span>
@@ -52,8 +55,8 @@ export default function Nav() {
       <ul
         className={[
           cls.MobileNavList,
-          isBurgerMenuActive ? cls.MobileNavListActive : '',
-        ].join(' ')}
+          isBurgerMenuActive ? cls.MobileNavListActive : "",
+        ].join(" ")}
       >
         <li>Главная</li>
         <li>Министерство</li>
