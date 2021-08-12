@@ -46,7 +46,7 @@ export default function HeroSlider({ on_main_slider }) {
                     />
                     {isActive && (
                       <div className={cls.swiperSlide__detail}>
-                        <p className={`m-0`}>{formatDate(images[0].created)}</p>
+                        <p className={`m-0`}>{formatDate(images[0].created, 'string')}</p>
                         <p className={`m-0`}>
                           {title.length > 20
                             ? title.slice(0, 35) + '...'

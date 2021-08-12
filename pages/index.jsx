@@ -41,9 +41,7 @@ export async function getServerSideProps() {
   const {
     data: { results: links },
   } = await axios.get(`${BASE_URL}/links`);
-
-  console.log('serverLinks: ', links);
-
+  console.log(last_news)
   return {
     props: {
       on_main_slider,

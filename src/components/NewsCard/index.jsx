@@ -5,9 +5,10 @@ import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import cls from "./NewsCard.module.scss";
+import Link from "next/link";
 
 export default function NewsCard({id, ...rest}) {
-  const {images, title, content} = rest;
+  const {images, title, content, category} = rest;
 
   return (
     <Card className={cls.root}>
@@ -30,9 +31,9 @@ export default function NewsCard({id, ...rest}) {
       </CardActionArea>
       <CardActions className="d-flex justify-content-between mb-3">
         <p className="ps-2 m-0">20.02.2012</p>
-        <a className="pe-2 m-0" href="#">
-          Преступления
-        </a>
+        <Link href={`/news/${category}`}>
+          <a>Преступления</a>
+        </Link>
       </CardActions>
     </Card>
   );

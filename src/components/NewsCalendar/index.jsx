@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
-import { Calendar } from "@material-ui/pickers";
-import { DatePicker } from "@material-ui/pickers";
+import {Calendar} from "@material-ui/pickers";
+import {DatePicker} from "@material-ui/pickers";
 
 import cls from "./Calendar.module.scss";
 
@@ -8,7 +8,7 @@ const NewsCalendar = ({onCalendarChange, touched, setTouched}) => {
   const [date, setDate] = useState(new Date());
   useEffect(() => {
     touched && onCalendarChange(date)
-  }, [date])
+  }, [date, touched])
 
   return (
     <>
@@ -16,7 +16,12 @@ const NewsCalendar = ({onCalendarChange, touched, setTouched}) => {
         <Calendar date={date} onChange={date => {
           setDate(date)
           setTouched(true)
-        }} />
+        }}/>
+        {touched &&
+        <button onClick={() => onCalendarChange('')} className={cls.calendar__remove}>
+          Сбросить
+        </button>
+        }
       </div>
 
       <div className={cls.MobileDesktop}>
@@ -29,6 +34,11 @@ const NewsCalendar = ({onCalendarChange, touched, setTouched}) => {
           }}
           animateYearScrolling
         />
+        {touched &&
+        <button onClick={() => onCalendarChange('')} className={cls.calendar__remove}>
+          Сбросить
+        </button>
+        }
       </div>
     </>
   );
