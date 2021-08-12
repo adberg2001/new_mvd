@@ -1,6 +1,6 @@
 import React from 'react';
 import Hero from './components/Hero';
-import NewsListSection from './components/NewsListSection';
+import NewsListSection from '../components/NewsListSection';
 import Rubrics from './components/Rubrics';
 import Services from './components/Services';
 import TerritorySection from './components/Territory';
@@ -17,7 +17,7 @@ export default function Home({
   return (
     <>
       <Hero on_main_slider={on_main_slider} />
-      <NewsListSection last_news={last_news} />
+      <NewsListSection last_news={last_news} title={'Важные новости'}/>
       <Services services={services} />
       <Rubrics />
       <TerritorySection initialRegion={initialRegion} />
