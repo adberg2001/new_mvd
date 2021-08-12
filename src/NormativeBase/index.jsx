@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React  from 'react';
 import cls from './NormativeBase.module.scss';
-import BaseSheetRow from '../components/BaseSheetRow';
+import BaseSheetRow from '../components/components/BaseSheetRow';
 import Pagination from '@material-ui/lab/Pagination';
 
 const normativeBase = [
@@ -97,7 +97,6 @@ const normativeBase = [
 ];
 
 export default function NormativeBaseComponent() {
-  const [activePag, setActivePag] = useState('1');
 
   return (
     <section className={`${cls.main} container`}>

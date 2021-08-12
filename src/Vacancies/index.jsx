@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React  from 'react';
 import cls from './Vacancies.module.scss';
-import BaseSheetRow from '../components/BaseSheetRow';
+import BaseSheetRow from '../components/components/BaseSheetRow';
 import Pagination from '@material-ui/lab/Pagination';
 
 const vacancies = [
@@ -97,7 +97,6 @@ const vacancies = [
 ];
 
 export default function VacanciesComponent() {
-  const [activePag, setActivePag] = useState('1');
 
   return (
     <section className={`${cls.main} container`}>
