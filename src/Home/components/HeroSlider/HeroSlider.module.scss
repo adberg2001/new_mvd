@@ -16,7 +16,7 @@
       height: 320px;
       width: 320px;
 
-      &__img{
+      &__img {
         width: 100%;
         height: 100%;
         background-position: center;
@@ -30,12 +30,15 @@
         bottom: 0;
         display: flex;
         flex-direction: column;
-        transition: .3s ease-in-out;
+        transition: 0.3s ease-in-out;
         padding: 16px 9px;
         color: #fff;
-        p{
+        p {
           font-size: 15px;
           line-height: 18px;
+          @media only screen and (max-width: 763px) {
+            font-size: 13px;
+          }
         }
       }
     }

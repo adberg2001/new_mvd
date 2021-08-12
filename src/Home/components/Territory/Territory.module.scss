@@ -1,6 +1,8 @@
+@import "styles/_variables.scss";
+
 .mapInfo {
   background: #f7f7f7;
-  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: $base-shadow;
   border-radius: 15px;
   padding: 20px;
   width: 350px;
@@ -33,6 +35,7 @@
       p {
         &:first-child {
           color: #5b58ad;
+          font-weight: bold;
         }
         margin-bottom: 0;
       }

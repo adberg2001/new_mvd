@@ -1,8 +1,11 @@
 .container {
   width: 73% !important;
 
+  margin-right: 20px;
+
   @media only screen and (max-width: 1080px) {
     width: auto !important;
+    margin-right: 0;
   }
 
   .Btn {

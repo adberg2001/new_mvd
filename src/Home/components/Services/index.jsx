@@ -1,17 +1,17 @@
-import React from 'react';
-import cls from './Services.module.scss';
+import React from "react";
+import cls from "./Services.module.scss";
 
 // Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from "swiper/react";
 
 // import Swiper core and required modules
-import SwiperCore, { Navigation } from 'swiper/core';
+import SwiperCore, { Navigation } from "swiper/core";
 
 // Import Swiper styles
-import 'swiper/swiper.min.css';
-import 'swiper/components/navigation/navigation.min.css';
-import ServiceCard from './ServiceCard';
-import useWindowSize from '../../../../hooks/useWindowSize';
+import "swiper/swiper.min.css";
+import "swiper/components/navigation/navigation.min.css";
+import ServiceCard from "./ServiceCard";
+import useWindowSize from "../../../../hooks/useWindowSize";
 
 // install Swiper modules
 SwiperCore.use([Navigation]);
@@ -67,8 +67,8 @@ const Services = ({ services }) => {
   const windowSize = useWindowSize();
 
   return (
-    <section className={[cls.Container, 'section'].join(' ')} id={'services'}>
-      <h2 className={'section__heading'}>Услуги</h2>
+    <section className={[cls.Container, "section"].join(" ")} id={"services"}>
+      <h2 className={"section__heading"}>Услуги</h2>
       <Swiper breakpoints={breakPoints} navigation={true} className="mySwiper">
         {windowSize > 828
           ? renderDesktopSlides(services)

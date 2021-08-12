@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/globals.scss";
 import "../styles/utils.scss";
 import { createTheme, MuiThemeProvider } from "@material-ui/core";
+import ModalWindowProvider from "../contexts/ModalWindowProvider";
 
 const theme = createTheme({
   palette: {
@@ -19,7 +20,9 @@ function MyApp({ Component, pageProps }) {
   return (
     <MuiThemeProvider theme={theme}>
       <MuiPickersUtilsProvider utils={DateFnsUtils} locale={ruLocale}>
-        <Component {...pageProps} />
+        <ModalWindowProvider>
+          <Component {...pageProps} />
+        </ModalWindowProvider>
       </MuiPickersUtilsProvider>
     </MuiThemeProvider>
   );

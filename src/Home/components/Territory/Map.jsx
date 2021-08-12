@@ -11,7 +11,7 @@ const Map = ({ onRegionChange }) => {
       strokeLinejoin="round"
       strokeWidth="2"
       version="1.2"
-      viewbox="0 0 1000 493"
+      viewBox="0 0 1000 493"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path

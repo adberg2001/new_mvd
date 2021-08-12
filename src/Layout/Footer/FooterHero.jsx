@@ -9,8 +9,8 @@ export default function FooterHero() {
       <Image
         src="/images/logo_mvd.svg"
         alt="logo_mvd.svg"
-        width="150"
-        height="150"
+        width="120"
+        height="120"
       />
       <Typography variant={"h3"} className={`ms-5`}>
         МИНИСТЕРСТВО ВНУТРЕННИХ ДЕЛ <br /> КЫРГЫЗСКОЙ РЕСПУБЛИКИ
