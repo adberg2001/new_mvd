@@ -33,6 +33,7 @@ export default function NewsListSection({last_news, title}) {
         <NewsList news={touched ? filtratedNews : results}/>
         <div className="d-flex flex-column mt-5 ml-2">
           <NewsCalendar touched={touched} setTouched={setTouched} onCalendarChange={onCalendarChange}/>
+
           <Galleries/>
         </div>
       </div>

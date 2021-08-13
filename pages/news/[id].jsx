@@ -18,3 +18,4 @@ News.getInitialProps = async ({query: {id}}) => {
     news: data
   }
 }
+
