@@ -12,13 +12,12 @@ function HomePage({
   links,
 }) {
   return (
-    <Layout>
+    <Layout links={links}>
       <Home
         on_main_slider={on_main_slider}
         services={services}
         initialRegion={initialRegion}
         last_news={last_news}
-        links={links}
       />
     </Layout>
   );
@@ -41,7 +40,7 @@ export async function getServerSideProps() {
   const {
     data: { results: links },
   } = await axios.get(`${BASE_URL}/links`);
-  console.log(last_news)
+
   return {
     props: {
       on_main_slider,

@@ -1,9 +1,10 @@
 import Head from 'next/head';
 import React from 'react';
 import Nav from './Nav';
-import Footer from "./Footer";
+import Footer from './Footer';
+import UsefulLinks from './UsefulLinks';
 
-export default function Layout({ children }) {
+export default function Layout({ children, links }) {
   return (
     <>
       <Head>
@@ -19,7 +20,9 @@ export default function Layout({ children }) {
 
       <main>{children}</main>
 
-      <Footer/>
+      <UsefulLinks links={links} />
+
+      <Footer />
     </>
   );
 }
