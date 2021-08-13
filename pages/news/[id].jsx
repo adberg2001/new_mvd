@@ -1,21 +1,28 @@
-import Layout from "../../src/Layout/Layout";
-import NewsDetailComponent from "../../src/NewsDetail";
-import axios from "axios";
-import {BASE_URL} from "../../api/api";
+import Layout from '../../src/Layout/Layout';
+import NewsDetailComponent from '../../src/NewsDetail';
+import axios from 'axios';
+import { BASE_URL } from '../../api/api';
 
-export default function News({news: serverNews}) {
-  console.log(serverNews)
+export default function News({ news: serverNews, links }) {
+  console.log(serverNews);
   return (
-    <Layout>
-      <NewsDetailComponent {...serverNews}/>
+    <Layout links={links}>
+      <NewsDetailComponent {...serverNews} />
     </Layout>
-  )
+  );
 }
 
-News.getInitialProps = async ({query: {id}}) => {
-  const {data} = await axios.get(`${BASE_URL}/news/${id}`);
+News.getInitialProps = async ({ query: { id } }) => {
+  const { data } = await axios.get(`${BASE_URL}/news/${id}`);
+
+  const {
+    data: { results: links },
+  } = await axios.get(`${BASE_URL}/links`);
+
+  console.log('links: ', links);
+
   return {
-    news: data
-  }
-}
-
+    news: data,
+    links,
+  };
+};
