@@ -34,12 +34,13 @@ export default function NewsListSection({ last_news, title }) {
       <h2 className={'section__heading'}>{title}</h2>
       <div className={cls.contentWrapper}>
         <NewsList news={touched ? filtratedNews : results} />
-        <div className="d-flex flex-column mt-0 mt-xl-5 ml-2">
+        <div className="d-flex flex-column mt-5 ml-2">
           <NewsCalendar
             touched={touched}
             setTouched={setTouched}
             onCalendarChange={onCalendarChange}
           />
+
           <Galleries />
         </div>
       </div>

@@ -12,25 +12,27 @@ export default function NewsCard({ id, ...rest }) {
 
   return (
     <Card className={cls.root}>
-      <CardActionArea>
-        <CardMedia
-          className={cls.media}
-          image={images[0].image}
-          title="Contemplative Reptile"
-        />
-        <CardContent>
-          <h2>{title.length > 20 ? title.slice(0, 22) + ' ...' : title}</h2>
-
-          <div
-            className={cls.media__description}
-            dangerouslySetInnerHTML={{ __html: content }}
+      <Link href={`/news/${id}`}>
+        <CardActionArea>
+          <CardMedia
+            className={cls.media}
+            image={images[0].image}
+            title="Contemplative Reptile"
           />
-        </CardContent>
-      </CardActionArea>
+          <CardContent>
+            <h2>{title.length > 20 ? title.slice(0, 22) + ' ...' : title}</h2>
+
+            <div
+              className={cls.media__description}
+              dangerouslySetInnerHTML={{ __html: content }}
+            />
+          </CardContent>
+        </CardActionArea>
+      </Link>
       <CardActions className="d-flex justify-content-between mb-3">
         <p className="ps-2 m-0">20.02.2012</p>
-        <Link href={`/news/${category.id}`}>
-          <a>Преступления</a>
+        <Link href={`/news/?category=${category.id}`}>
+          <a>{category.title}</a>
         </Link>
       </CardActions>
     </Card>

@@ -1,0 +1,40 @@
+.RubricsNav{
+  margin-top: 50px;
+  margin-left: 20px;
+  @media only  screen and (max-width: 1080px) {
+    margin: 0;
+  }
+
+  .desc_menu{
+    @media only  screen and (max-width: 1080px) {
+      display: none;
+    }
+  }
+
+  .menu_button{
+    @media only  screen and (min-width: 1080px) {
+      display: none;
+    }
+  }
+
+  h3{
+    color: #0094ff;
+    font-weight: 400;
+  }
+
+  ul{
+    display: flex;
+    flex-direction: column;
+    grid-gap: 9px;
+    list-style: none;
+    padding: 0;
+
+    li{
+      a{
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 21px;
+      }
+    }
+  }
+}
