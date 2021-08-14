@@ -1,11 +1,72 @@
 .Hero {
   height: 100vh;
   width: 100%;
-  background-image: url("/images/background.png");
+  background-image: url('/images/background.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   padding-top: 135px;
+  position: relative;
+
+  .HeroLinks {
+    position: absolute;
+    top: 150px;
+    left: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media only screen and (max-width: 1080px) {
+      align-items: flex-start;
+      left: 10px;
+      top: 120px;
+    }
+
+    p {
+      color: #fff;
+      font-size: 24px;
+      font-weight: bold;
+
+      @media only screen and (max-width: 1080px) {
+        max-width: 100px;
+        font-size: 13px;
+      }
+    }
+
+    ul {
+      display: flex;
+      align-items: center;
+      padding: 0;
+
+      @media only screen and (max-width: 1080px) {
+        flex-wrap: wrap;
+        width: 90px;
+        justify-content: flex-start;
+      }
+
+      li {
+        &:first-child {
+          margin-right: 3px;
+          margin-bottom: 2px;
+
+          @media only screen and (max-width: 1080px) {
+            margin-right: 9px;
+          }
+        }
+
+        &:last-child {
+          margin-top: 2px;
+        }
+
+        margin-right: 7px;
+        &:hover {
+          img {
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+  }
 
   @media only screen and (max-width: 1200px) {
     height: 1000px;
