@@ -56,7 +56,11 @@ export default function Nav() {
                   <a>Руководсво</a>
                 </Link>
               </li>
-              <li>Структура</li>
+              <li>
+                <Link href='/structure'>
+                  <a>Структура</a>
+                </Link>
+              </li>
               <li>
                 <Link href="/ministry/history">
                   <a>История</a>
@@ -93,6 +97,11 @@ export default function Nav() {
               <li>
                 <Link href="/vacancies">
                   <a>Вакансии в ОВД</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/collages">
+                  <a>Учебные заведения МВД КР</a>
                 </Link>
               </li>
               <li>
@@ -167,6 +176,11 @@ export default function Nav() {
         <li>
           <Link href="/gender-policy">
             <a>Гендарная политика</a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/anticorruptional_politic">
+            <a>Антикоррупционная политика</a>
           </Link>
         </li>
         <li>

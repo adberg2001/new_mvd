@@ -1,0 +1,47 @@
+.row {
+  min-height: 107px;
+  list-style: none;
+  background: #FAFAFA;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+  color: #183F5B;
+
+  &__head {
+    height: 107px;
+
+    h5 {
+      font-size: 30px;
+      line-height: 35px;
+    }
+  }
+
+  &__image_wrapper {
+
+    @media only screen and (max-width: 768px) {
+      max-height: 300px;
+    }
+
+    > div {
+      position: unset !important;
+    }
+
+    .image {
+      object-fit: contain;
+      width: 100% !important;
+      position: relative !important;
+      height: unset !important;
+      @media only screen and (max-width: 768px) {
+        max-height: 250px !important;
+      }
+    }
+  }
+
+  &__content {
+    grid-gap: 30px;
+
+    h6 {
+      font-size: 24px;
+      line-height: 26px;
+    }
+  }
+}
