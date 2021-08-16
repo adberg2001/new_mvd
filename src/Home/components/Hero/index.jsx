@@ -1,8 +1,8 @@
-import React from 'react';
-import Image from 'next/image';
+import React from "react";
+import Image from "next/image";
 
-import cls from './Hero.module.scss';
-import HeroSlider from '../HeroSlider';
+import cls from "./Hero.module.scss";
+import HeroSlider from "../HeroSlider";
 
 export default function Hero({ on_main_slider }) {
   return (
