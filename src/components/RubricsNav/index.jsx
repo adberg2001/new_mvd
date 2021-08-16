@@ -1,8 +1,8 @@
-import React from 'react';
-import cls from './RubricsNav.module.scss';
-import { Button, Card, Menu, MenuItem } from '@material-ui/core';
-import { Menu as MenuIcon } from '@material-ui/icons';
-import Link from 'next/link';
+import React from "react";
+import cls from "./RubricsNav.module.scss";
+import { Button, Card, Menu, MenuItem } from "@material-ui/core";
+import { Menu as MenuIcon } from "@material-ui/icons";
+import Link from "next/link";
 
 export default function RubricsNav() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -25,37 +25,37 @@ export default function RubricsNav() {
           <h3 className={`mb-4`}>Рубрики</h3>
           <ul>
             <li>
-              <Link href={'/'}>
+              <Link href={"/"}>
                 <a>Вопросы миграции</a>
               </Link>
             </li>
             <li>
-              <Link href={'/'}>
+              <Link href={"/"}>
                 <a>Безопасный город</a>
               </Link>
             </li>
             <li>
-              <Link href={'/'}>
+              <Link href={"/"}>
                 <a>Туризм</a>
               </Link>
             </li>
             <li>
-              <Link href={'/'}>
+              <Link href={"/"}>
                 <a>Безопасность граждан</a>
               </Link>
             </li>
             <li>
-              <Link href={'/'}>
+              <Link href={"/"}>
                 <a>Криминалистика</a>
               </Link>
             </li>
             <li>
-              <Link href={'/'}>
+              <Link href={"/"}>
                 <a>Мнение общественности</a>
               </Link>
             </li>
             <li>
-              <Link href={'/'}>
+              <Link href={"/"}>
                 <a>Новости министерства</a>
               </Link>
             </li>
@@ -68,7 +68,7 @@ export default function RubricsNav() {
           className={`${cls.menu_button}`}
           variant="contained"
           color="primary"
-          style={{ backgroundColor: '#0094ff' }}
+          style={{ backgroundColor: "#183f5b" }}
         >
           <MenuIcon />
         </Button>
@@ -80,37 +80,37 @@ export default function RubricsNav() {
           onClose={handleClose}
         >
           <MenuItem onClick={handleClose}>
-            <Link href={'/'}>
+            <Link href={"/"}>
               <a>Вопросы миграции</a>
             </Link>
           </MenuItem>
           <MenuItem onClick={handleClose}>
-            <Link href={'/'}>
+            <Link href={"/"}>
               <a>Безопасный город</a>
             </Link>
           </MenuItem>
           <MenuItem onClick={handleClose}>
-            <Link href={'/'}>
+            <Link href={"/"}>
               <a>Безопасность граждан</a>
             </Link>
           </MenuItem>
           <MenuItem onClick={handleClose}>
-            <Link href={'/'}>
+            <Link href={"/"}>
               <a>Криминалистика</a>
             </Link>
           </MenuItem>
           <MenuItem onClick={handleClose}>
-            <Link href={'/'}>
+            <Link href={"/"}>
               <a>Мнение общественности</a>
             </Link>
           </MenuItem>
           <MenuItem onClick={handleClose}>
-            <Link href={'/'}>
+            <Link href={"/"}>
               <a>Новости министерства</a>
             </Link>
           </MenuItem>
           <MenuItem onClick={handleClose}>
-            <Link href={'/'}>
+            <Link href={"/"}>
               <a>Туризм</a>
             </Link>
           </MenuItem>

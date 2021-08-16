@@ -1,9 +1,9 @@
-import React, { useRef, useState } from 'react';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import ExpandLessIcon from '@material-ui/icons/ExpandLess';
-import cls from './Layout.module.scss';
-import Link from 'next/link';
-import useOutsideClick from '../../hooks/useOutsideClick';
+import React, { useRef, useState } from "react";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import ExpandLessIcon from "@material-ui/icons/ExpandLess";
+import cls from "./Layout.module.scss";
+import Link from "next/link";
+import useOutsideClick from "../../hooks/useOutsideClick";
 
 export default function Nav() {
   const [isBurgerMenuActive, setBurgerMenuActive] = useState(false);
@@ -22,6 +22,7 @@ export default function Nav() {
   };
 
   const menuRef = useRef(null);
+  const mobileNavRef = useRef(null);
 
   const hideMenus = () => {
     setMenus({
@@ -31,21 +32,26 @@ export default function Nav() {
     });
   };
 
+  const handleMobileNavClose = () => {
+    setBurgerMenuActive(false);
+  };
+
   useOutsideClick(menuRef, hideMenus);
+  useOutsideClick(mobileNavRef, handleMobileNavClose);
 
   return (
     <nav className={cls.Nav}>
       <ul className={cls.DesktopNavList}>
         <li>
-          <Link href={'/'}>
+          <Link href={"/"}>
             <a>Главная</a>
           </Link>
         </li>
         <li
-          style={{ position: 'relative' }}
-          onClick={() => handleMenuOpen('ministry')}
+          style={{ position: "relative" }}
+          onClick={() => handleMenuOpen("ministry")}
         >
-          <Link href={'/'}>
+          <Link href={"/"}>
             <a>Министерство</a>
           </Link>
 
@@ -57,7 +63,7 @@ export default function Nav() {
                 </Link>
               </li>
               <li>
-                <Link href='/structure'>
+                <Link href="/structure">
                   <a>Структура</a>
                 </Link>
               </li>
@@ -83,8 +89,8 @@ export default function Nav() {
         </li>
 
         <li
-          style={{ position: 'relative' }}
-          onClick={() => handleMenuOpen('civils')}
+          style={{ position: "relative" }}
+          onClick={() => handleMenuOpen("civils")}
         >
           <a>Для граждан</a>
           {menus.civils && (
@@ -122,8 +128,8 @@ export default function Nav() {
           <a href="#services">Услуги</a>
         </li>
         <li
-          style={{ position: 'relative' }}
-          onClick={() => handleMenuOpen('goverment')}
+          style={{ position: "relative" }}
+          onClick={() => handleMenuOpen("goverment")}
         >
           <a>Госпрограмма</a>
           {menus.goverment && (
@@ -139,7 +145,7 @@ export default function Nav() {
                 </a>
               </li>
               <li>
-                <Link href={'/gov_programs/reform'}>
+                <Link href={"/gov_programs/reform"}>
                   <a href="">Меры по реформированию ОВД КР</a>
                 </Link>
               </li>
@@ -153,7 +159,7 @@ export default function Nav() {
                 </a>
               </li>
               <li>
-                <Link href={'/gov_programs/lang_pro'}>
+                <Link href={"/gov_programs/lang_pro"}>
                   <a>
                     Национальная программа развития государственного языка и
                     совершенствования языковой политики в Кыргызской Республике
@@ -192,8 +198,8 @@ export default function Nav() {
         onClick={() => setBurgerMenuActive(!isBurgerMenuActive)}
         className={[
           cls.BurgerMenuBtn,
-          isBurgerMenuActive ? cls.BurgerMenuBtnActive : '',
-        ].join(' ')}
+          isBurgerMenuActive ? cls.BurgerMenuBtnActive : "",
+        ].join(" ")}
       >
         <span></span>
         <span></span>
@@ -201,10 +207,11 @@ export default function Nav() {
       </div>
 
       <ul
+        ref={mobileNavRef}
         className={[
           cls.MobileNavList,
-          isBurgerMenuActive ? cls.MobileNavListActive : '',
-        ].join(' ')}
+          isBurgerMenuActive ? cls.MobileNavListActive : "",
+        ].join(" ")}
       >
         <li>Главная</li>
         <li>Министерство</li>
