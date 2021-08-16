@@ -5,7 +5,7 @@ export default function CollagesComponent({collages}){
 
   return (
     <div className={`container ${cls.Collages}`}>
-      <h1 className={`section__heading`}>Структура</h1>
+      <h1 className={`section__heading`}>Учебные заведения МВД КР</h1>
       <ul>
         {
           !!collages.length &&
