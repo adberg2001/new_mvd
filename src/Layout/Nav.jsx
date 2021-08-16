@@ -12,6 +12,7 @@ export default function Nav() {
     goverment: false,
     ministry: false,
     civils: false,
+    massMedia: false
   });
 
   const handleMenuOpen = (name) => {
@@ -28,6 +29,7 @@ export default function Nav() {
       goverment: false,
       ministry: false,
       civils: false,
+      massMedia: false
     });
   };
 
@@ -118,9 +120,38 @@ export default function Nav() {
           )}
           {menus.civils ? <ExpandLessIcon /> : <ExpandMoreIcon />}
         </li>
+
+        <li
+          style={{ position: 'relative' }}
+          onClick={() => handleMenuOpen('massMedia')}
+        >
+          <a>Для СМИ</a>
+          {menus.massMedia && (
+            <div ref={menuRef} className={cls.navLinksMenu__massMedia}>
+              <h6>Пресс служба МВД</h6>
+              <p className={cls.navLinksMenu__massMedia__contacts}>
+                Наши контакты:<br/>
+                +996 312 26 62 54<br/><br/>
+                Пресс-центр МВД КР:<br/>
+                +996 312 26 62 90<br/><br/>
+                e-mail: pressa@mvd.kg адрес:<br/>
+                г.Бишкек ул. Фрунзе 469
+              </p>
+              <Link href={'/photo_gallery'}>
+                <a>Фотогалерея</a>
+              </Link>
+              <Link href={'/videos_gallery'}>
+                <a>Видеогалерея</a>
+              </Link>
+            </div>
+          )}
+          {menus.massMedia ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+        </li>
+
         <li>
           <a href="#services">Услуги</a>
         </li>
+
         <li
           style={{ position: 'relative' }}
           onClick={() => handleMenuOpen('goverment')}
