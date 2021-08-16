@@ -1,4 +1,4 @@
-@import 'styles/_variables.scss';
+@import "styles/_variables.scss";
 
 .Nav {
   height: 95px;
@@ -22,26 +22,25 @@
     box-shadow: $base-shadow;
     border: 1px solid gray;
 
-    &__massMedia{
-      width: 250px;
+    &__massMedia {
+      width: 200px;
       position: absolute;
       background: #fff;
       padding: 15px;
       top: 50px;
       box-shadow: $base-shadow;
       border: 1px solid gray;
+      font-size: 13px !important;
 
-      &__contacts{
+      &__contacts {
         color: #010b1f;
-        font-size: 16px;
-        line-height: 18px;
       }
 
-      a{
+      a {
         color: #183f5b;
         display: block;
         font-weight: bold;
-        &:hover{
+        &:hover {
           color: $link-color !important;
         }
       }
@@ -140,6 +139,7 @@
     @media only screen and (min-width: 1080px) {
       transform: translateX(100%);
     }
+    width: 160px;
     background-color: #fff;
     display: flex;
     padding: 20px;
@@ -151,9 +151,15 @@
     flex-direction: column;
     transition: transform 100ms ease-in;
 
-    li {
+    .ListItem {
+      padding: 0;
       font-size: 13px;
-      margin-bottom: 10px;
+      color: $base-light;
+    }
+
+    .Nested {
+      padding: 0;
+      padding-left: 5px;
       color: $base-light;
     }
   }

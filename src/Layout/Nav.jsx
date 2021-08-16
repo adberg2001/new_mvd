@@ -1,9 +1,14 @@
 import React, { useRef, useState } from "react";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import ExpandLessIcon from "@material-ui/icons/ExpandLess";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemText from "@material-ui/core/ListItemText";
+
 import cls from "./Layout.module.scss";
 import Link from "next/link";
 import useOutsideClick from "../../hooks/useOutsideClick";
+import { Collapse } from "@material-ui/core";
 
 export default function Nav() {
   const [isBurgerMenuActive, setBurgerMenuActive] = useState(false);
@@ -12,7 +17,14 @@ export default function Nav() {
     goverment: false,
     ministry: false,
     civils: false,
-    massMedia: false
+    massMedia: false,
+  });
+
+  const [mobileMenus, setMobileMenus] = useState({
+    goverment: false,
+    ministry: false,
+    civils: false,
+    massMedia: false,
   });
 
   const handleMenuOpen = (name) => {
@@ -30,16 +42,12 @@ export default function Nav() {
       goverment: false,
       ministry: false,
       civils: false,
-      massMedia: false
+      massMedia: false,
     });
   };
 
-  const handleMobileNavClose = () => {
-    setBurgerMenuActive(false);
-  };
-
   useOutsideClick(menuRef, hideMenus);
-  useOutsideClick(mobileNavRef, handleMobileNavClose);
+  useOutsideClick(mobileNavRef, () => setBurgerMenuActive(false));
 
   return (
     <nav className={cls.Nav}>
@@ -128,25 +136,30 @@ export default function Nav() {
         </li>
 
         <li
-          style={{ position: 'relative' }}
-          onClick={() => handleMenuOpen('massMedia')}
+          style={{ position: "relative" }}
+          onClick={() => handleMenuOpen("massMedia")}
         >
           <a>Для СМИ</a>
           {menus.massMedia && (
             <div ref={menuRef} className={cls.navLinksMenu__massMedia}>
               <h6>Пресс служба МВД</h6>
               <p className={cls.navLinksMenu__massMedia__contacts}>
-                Наши контакты:<br/>
-                +996 312 26 62 54<br/><br/>
-                Пресс-центр МВД КР:<br/>
-                +996 312 26 62 90<br/><br/>
-                e-mail: pressa@mvd.kg адрес:<br/>
-                г.Бишкек ул. Фрунзе 469
+                Наши контакты:
+                <br />
+                <a href={"tel: +996 312 26 62 54"}> +996 312 26 62 54</a>
+                <br />
+                Пресс-центр МВД КР:
+                <br />
+                <a href={"tel: +996 312 26 62 90"}> +996 312 26 62 90</a>
+                <br />
+                Email: <a href={"mailto:pressa@mvd.kg"}>pressa@mvd.kg</a>
+                <br />
+                Адрес: г.Бишкек ул. Фрунзе 469
               </p>
-              <Link href={'/photo_gallery'}>
+              <Link href={"/photo_gallery"}>
                 <a>Фотогалерея</a>
               </Link>
-              <Link href={'/videos_gallery'}>
+              <Link href={"/videos_gallery"}>
                 <a>Видеогалерея</a>
               </Link>
             </div>
@@ -237,25 +250,157 @@ export default function Nav() {
         <span></span>
       </div>
 
-      <ul
-        ref={mobileNavRef}
+      <List
+        // ref={mobileNavRef}
         className={[
           cls.MobileNavList,
           isBurgerMenuActive ? cls.MobileNavListActive : "",
         ].join(" ")}
       >
-        <li>Главная</li>
-        <li>Министерство</li>
-        <li>Для граждан</li>
-        <li>Услуги</li>
-        <li>Госпрограмма</li>
-        <li>Контакты</li>
+        <ListItem className={cls.ListItem}>
+          <Link href="/">
+            <a>
+              <ListItemText primary="Главная" />
+            </a>
+          </Link>
+        </ListItem>
+        <ListItem
+          button
+          className={cls.ListItem}
+          onClick={() =>
+            setMobileMenus({
+              ...mobileMenus,
+              goverment: !mobileMenus.goverment,
+            })
+          }
+        >
+          <ListItemText primary="Министерство" />
+          {mobileMenus.goverment ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+        </ListItem>
+
+        <Collapse in={mobileMenus.goverment} timeout="auto" unmountOnExit>
+          <List component="div" disablePadding>
+            <ListItem className={cls.Nested}>
+              <Link href="/management">
+                <a>
+                  <ListItemText primary={"Руководство"} />
+                </a>
+              </Link>
+            </ListItem>
+
+            <ListItem className={cls.Nested}>
+              <Link href="/structure">
+                <a>
+                  <ListItemText primary={"Структура"} />
+                </a>
+              </Link>
+            </ListItem>
+
+            <ListItem className={cls.Nested}>
+              <Link href="/ministry/history">
+                <a>
+                  <ListItemText primary={"История"} />
+                </a>
+              </Link>
+            </ListItem>
+
+            <ListItem className={cls.Nested}>
+              <ListItemText primary={"Государственная символика"} />
+            </ListItem>
+
+            <ListItem className={cls.Nested}>
+              <Link href="/ministry/normative-bases">
+                <a>
+                  <ListItemText primary={"Нормативная база"} />
+                </a>
+              </Link>
+            </ListItem>
+
+            <ListItem className={cls.Nested}>
+              <Link href="/ministry/normative-acts">
+                <a>
+                  <ListItemText primary={"Проекты нормативных актов"} />
+                </a>
+              </Link>
+            </ListItem>
+          </List>
+        </Collapse>
+
+        <ListItem
+          button
+          onClick={() =>
+            setMobileMenus({
+              ...mobileMenus,
+              civils: !mobileMenus.civils,
+            })
+          }
+          className={cls.ListItem}
+        >
+          <ListItemText primary="Для граждан" />
+          {mobileMenus.civils ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+        </ListItem>
+
+        <Collapse in={mobileMenus.civils} timeout="auto" unmountOnExit>
+          <List component="div" disablePadding>
+            <ListItem className={cls.Nested}>
+              <Link href="/civils/phone-numbers">
+                <a>
+                  <ListItemText primary={"Телефоны доверия"} />
+                </a>
+              </Link>
+            </ListItem>
+
+            <ListItem className={cls.Nested}>
+              <Link href="/vacancies">
+                <a>
+                  <ListItemText primary={"Вакансии в ОВД"} />
+                </a>
+              </Link>
+            </ListItem>
+
+            <ListItem className={cls.Nested}>
+              <Link href="/collages">
+                <a>
+                  <ListItemText primary={"Учебные заведения МВД КР"} />
+                </a>
+              </Link>
+            </ListItem>
+
+            <ListItem className={cls.Nested}>
+              <Link href="/civils/rozysk">
+                <a>
+                  <ListItemText primary={"Внимание, розыск!"} />
+                </a>
+              </Link>
+            </ListItem>
+
+            <ListItem className={cls.Nested}>
+              <Link href="/civils/sign-language-interpreters">
+                <a>
+                  <ListItemText
+                    primary={"Список сурдопереводчиков с юридическим уклоном!"}
+                  />
+                </a>
+              </Link>
+            </ListItem>
+          </List>
+        </Collapse>
+
+        <ListItem className={cls.ListItem}>
+          <ListItemText primary="Услуги" />
+        </ListItem>
+        <ListItem className={cls.ListItem}>
+          <ListItemText primary="Госпрограмма" />
+        </ListItem>
+        <ListItem className={cls.ListItem}>
+          <ListItemText primary="Контакты" />
+        </ListItem>
         <li>
           <Link href="https://mvd.gov.kg/gendernaya-politika.html">
             <a target="_blank">Политика</a>
           </Link>
         </li>
-      </ul>
+      </List>
     </nav>
   );
 }
