@@ -67,14 +67,18 @@
 }
 
 .StaticContentMain {
-  padding-top: 160px;
+  h1 {
+    font-size: 28px;
 
-  h3 {
+    @media only screen and (max-width: 763px) {
+      font-size: 18px;
+    }
+
     margin-bottom: 30px;
   }
 
-  @media only screen and (max-width: 763px) {
-    padding-top: 100px;
+  h3 {
+    margin-bottom: 30px;
   }
 
   ul {
@@ -82,8 +86,8 @@
   }
 
   img {
-    max-width: 800px;
-    width: 80%;
+    max-width: 800px !important;
+    width: 80% !important;
     margin: 0 auto;
     display: block;
   }

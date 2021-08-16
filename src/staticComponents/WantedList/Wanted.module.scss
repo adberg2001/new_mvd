@@ -1,0 +1,17 @@
+@import '../../../styles/variables';
+
+.List {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+
+  .Wanted {
+    border: 1px solid $base-dark;
+    border-radius: 15px;
+    box-shadow: $base-shadow;
+    padding: 15px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 800px;
+  }
+}

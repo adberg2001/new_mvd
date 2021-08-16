@@ -15,9 +15,6 @@ export default function Layout({ children, links }) {
 
       <Nav />
 
-      {/* Nav Seperator (due to Nav fixed position) */}
-      {/* <div style={{ height: 95 }} /> */}
-
       <main>{children}</main>
 
       {links && <UsefulLinks links={links} />}

@@ -20,10 +20,10 @@ export default function History({ historyContent }) {
     <Layout>
       <section className={`container StaticContentMain`}>
         <div>
-          <h3>ИСТОРИЯ</h3>
+          <h1>ИСТОРИЯ</h1>
 
           <div
-            className={'History'}
+            // className={'History'}
             dangerouslySetInnerHTML={{
               __html: historyContent.content,
             }}

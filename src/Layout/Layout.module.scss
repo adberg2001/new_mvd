@@ -17,7 +17,7 @@
     width: 200px;
     height: auto;
     background-color: #fff;
-    padding: 10px 15px;
+    padding: 15px;
     top: 50px;
     box-shadow: $base-shadow;
     border: 1px solid gray;
@@ -28,18 +28,21 @@
       margin-bottom: 15px;
       line-height: 18px;
       cursor: pointer;
+      &:last-child {
+        margin-bottom: 0;
+      }
       &:hover {
         color: $link-color !important;
       }
     }
   }
 
-  @media only screen and (max-width: 963px) {
+  @media only screen and (max-width: 1080px) {
     height: 50px;
   }
 
   .DesktopNavList {
-    @media only screen and (max-width: 963px) {
+    @media only screen and (max-width: 1080px) {
       display: none;
     }
     padding: 0;
@@ -47,7 +50,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 911px;
+    max-width: 963px;
     margin-bottom: 0;
 
     li {
@@ -67,7 +70,7 @@
     height: 20px;
     cursor: pointer;
 
-    @media only screen and (max-width: 963px) {
+    @media only screen and (max-width: 1080px) {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -105,7 +108,7 @@
 
   .MobileNavList {
     box-shadow: $base-shadow;
-    @media only screen and (min-width: 963px) {
+    @media only screen and (min-width: 1080px) {
       transform: translateX(100%);
     }
     background-color: #fff;

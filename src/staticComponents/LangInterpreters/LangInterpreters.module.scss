@@ -1,0 +1,18 @@
+@import '../../../styles/variables';
+
+.List {
+  margin-top: 40px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+
+  .Interpreter {
+    border: 1px solid $base-dark;
+    border-radius: 15px;
+    box-shadow: $base-shadow;
+    padding: 15px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 500px;
+  }
+}

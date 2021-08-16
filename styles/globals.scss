@@ -16,7 +16,8 @@ body {
   }
 }
 
-a, button {
+a,
+button {
   color: inherit;
   text-decoration: none;
   border: none;
@@ -32,6 +33,25 @@ a, button {
 
 ul {
   list-style: none;
+}
+
+main {
+  > div,
+  > section {
+    padding-top: 100px !important;
+    @media only screen and (min-width: 963px) {
+      padding-top: 160px !important;
+    }
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #183f5b;
 }
 
 .swiper-button-next,

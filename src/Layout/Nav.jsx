@@ -1,8 +1,8 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useRef, useState } from 'react';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 import cls from './Layout.module.scss';
 import Link from 'next/link';
-import { useRef } from 'react';
 import useOutsideClick from '../../hooks/useOutsideClick';
 
 export default function Nav() {
@@ -11,6 +11,7 @@ export default function Nav() {
   const [menus, setMenus] = useState({
     goverment: false,
     ministry: false,
+    civils: false,
   });
 
   const handleMenuOpen = (name) => {
@@ -26,6 +27,7 @@ export default function Nav() {
     setMenus({
       goverment: false,
       ministry: false,
+      civils: false,
     });
   };
 
@@ -62,17 +64,50 @@ export default function Nav() {
               </li>
               <li>Государственная символика</li>
               <li>
-                <Link href="/normative-base">
+                <Link href="/ministry/normative-bases">
                   <a>Нормативная база</a>
                 </Link>
               </li>
-              <li>Проекты нормативных актов</li>
-              <li>Общественный совет</li>
+              <li>
+                <Link href="/ministry/normative-acts">
+                  <a>Проекты нормативных актов</a>
+                </Link>
+              </li>
             </ul>
           )}
+          {menus.ministry ? <ExpandLessIcon /> : <ExpandMoreIcon />}
         </li>
-        <li>
+
+        <li
+          style={{ position: 'relative' }}
+          onClick={() => handleMenuOpen('civils')}
+        >
           <a>Для граждан</a>
+          {menus.civils && (
+            <ul ref={menuRef} className={cls.navLinksMenu}>
+              <li>
+                <Link href="/civils/phone-numbers">
+                  <a>Телефоны доверия</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/vacancies">
+                  <a>Вакансии в ОВД</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/civils/rozysk">
+                  <a>Внимание, розыск!</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/civils/sign-language-interpreters">
+                  <a>Список сурдопереводчиков с юридическим уклоном!</a>
+                </Link>
+              </li>
+            </ul>
+          )}
+          {menus.civils ? <ExpandLessIcon /> : <ExpandMoreIcon />}
         </li>
         <li>
           <a href="#services">Услуги</a>

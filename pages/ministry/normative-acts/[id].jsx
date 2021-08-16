@@ -1,27 +1,27 @@
 import React from 'react';
-import Layout from '../../src/Layout/Layout';
+import Layout from '../../../src/Layout/Layout';
 import axios from 'axios';
-import { BASE_URL } from '../../api/api';
+import { BASE_URL } from '../../../api/api';
 
 export async function getServerSideProps({ query: { id } }) {
-  const { data } = await axios.get(`${BASE_URL}/normative_bases/${id}`);
+  const { data } = await axios.get(`${BASE_URL}/normative_base_projects/${id}`);
 
   return {
     props: {
-      normativeBase: data,
+      normativeAct: data,
     },
   };
 }
 
-export default function NormativeBaseDetail({ normativeBase }) {
+export default function NormativeActDetail({ normativeAct }) {
   return (
     <Layout>
       <section className={`container StaticContentMain`}>
         <div>
-          <h3>{normativeBase.title}</h3>
+          <h1>{normativeAct.title}</h1>
           <div
             dangerouslySetInnerHTML={{
-              __html: normativeBase.content,
+              __html: normativeAct.content,
             }}
           />
         </div>
