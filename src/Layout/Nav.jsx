@@ -82,7 +82,11 @@ export default function Nav() {
                   <a>История</a>
                 </Link>
               </li>
-              <li>Государственная символика</li>
+              <li>
+                <Link href="/gov_symbols">
+                  <a>Государственная символика</a>
+                </Link>
+              </li>
               <li>
                 <Link href="/ministry/normative-bases">
                   <a>Нормативная база</a>
@@ -159,7 +163,7 @@ export default function Nav() {
               <Link href={"/photo_gallery"}>
                 <a>Фотогалерея</a>
               </Link>
-              <Link href={"/videos_gallery"}>
+              <Link href={"/video_gallery"}>
                 <a>Видеогалерея</a>
               </Link>
             </div>
