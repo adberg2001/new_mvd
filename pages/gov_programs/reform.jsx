@@ -1,14 +1,14 @@
-import React from 'react';
-import Layout from '../../src/Layout/Layout';
+import React from "react";
+import Layout from "../../src/Layout/Layout";
 
 export default function Reform() {
   return (
     <Layout>
       <section className={`container StaticContentMain`}>
-        <h1 className={'section__heading'}>РЕФОРМА ОВД КР</h1>
+        <h1 className={"section__heading"}>РЕФОРМА ОВД КР</h1>
 
         <div>
-          <h3>ПРАВИТЕЛЬСТВО КЫРГЫЗСКОЙ РЕСПУБЛИКИ ПОСТАНОВЛЕНИ</h3>
+          <h4>ПРАВИТЕЛЬСТВО КЫРГЫЗСКОЙ РЕСПУБЛИКИ ПОСТАНОВЛЕНИ</h4>
           <p>
             от 30 апреля 2013 года № 220 <br /> О мерах по реформированию
             органов внутренних дел Кыргызской Республики

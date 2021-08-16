@@ -1,4 +1,4 @@
-@import './variables';
+@import "./variables";
 
 .container {
   width: 90%;
@@ -15,7 +15,7 @@
   text-align: center;
   margin-bottom: 42px;
   color: $base-light;
-  font-size: 48px;
+  font-size: 42px;
   font-weight: normal;
   line-height: 56px;
   @media only screen and (max-width: 1080px) {
@@ -68,13 +68,13 @@
 
 .StaticContentMain {
   h1 {
-    font-size: 28px;
+    font-size: 36px;
 
     @media only screen and (max-width: 763px) {
       font-size: 18px;
     }
 
-    margin-bottom: 30px;
+    margin-bottom: 50px;
   }
 
   h3 {

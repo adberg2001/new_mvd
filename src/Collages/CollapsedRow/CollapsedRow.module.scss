@@ -1,9 +1,18 @@
 .row {
   min-height: 107px;
   list-style: none;
-  background: #FAFAFA;
+  background: #fafafa;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 15px;
+
+  .Description {
+    font-size: 20px;
+    max-width: 400px;
+
+    @media only screen and (max-width: 768px) {
+      font-size: 16px;
+    }
+  }
 
   &__head {
     height: 107px;
@@ -15,7 +24,6 @@
   }
 
   &__image_wrapper {
-
     @media only screen and (max-width: 768px) {
       max-height: 300px;
     }
@@ -39,12 +47,12 @@
     grid-gap: 30px;
 
     a {
-      font-size: 24px;
-      color: #183F5B;
+      font-size: 20px;
+      color: #183f5b;
       line-height: 26px;
 
-      @media only screen and (max-width: 596px) {
-        font-size: 20px;
+      @media only screen and (max-width: 768px) {
+        font-size: 16px;
         line-height: 24px;
       }
     }

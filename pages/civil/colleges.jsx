@@ -1,8 +1,7 @@
 import Layout from "../../src/Layout/Layout";
 import axios from "axios";
-import {BASE_URL} from "../../api/api";
 import CollagesComponent from "../../src/Collages";
-
+import { BASE_URL } from "../../api/api";
 
 export async function getServerSideProps() {
   const {
@@ -11,16 +10,15 @@ export async function getServerSideProps() {
 
   return {
     props: {
-      collages: results,
+      colleges: results,
     },
   };
 }
 
-export default function Collages({collages}){
-
+export default function Colleges({ colleges }) {
   return (
     <Layout>
-      <CollagesComponent collages={collages}/>
+      <CollagesComponent colleges={colleges} />
     </Layout>
-  )
+  );
 }

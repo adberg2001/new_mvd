@@ -139,7 +139,7 @@
     @media only screen and (min-width: 1080px) {
       transform: translateX(100%);
     }
-    width: 160px;
+    width: 280px;
     background-color: #fff;
     display: flex;
     padding: 20px;
@@ -160,6 +160,8 @@
     .Nested {
       padding: 0;
       padding-left: 5px;
+      padding-bottom: 7px;
+      line-height: 17px;
       color: $base-light;
     }
   }
