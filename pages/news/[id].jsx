@@ -19,8 +19,6 @@ News.getInitialProps = async ({ query: { id } }) => {
     data: { results: links },
   } = await axios.get(`${BASE_URL}/links`);
 
-  console.log('links: ', links);
-
   return {
     news: data,
     links,

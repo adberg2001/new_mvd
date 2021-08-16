@@ -48,8 +48,12 @@
     padding: 0;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
+    grid-column-gap: 25px;
+    grid-row-gap: 10px;
     align-items: center;
+    align-content: center;
     max-width: 963px;
     margin-bottom: 0;
 

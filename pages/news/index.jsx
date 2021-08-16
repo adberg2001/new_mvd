@@ -23,8 +23,6 @@ export async function getServerSideProps({ query: { category } }) {
     data: { results: links },
   } = await axios.get(`${BASE_URL}/links`);
 
-  console.log('links: ', links);
-
   return {
     props: {
       last_news,

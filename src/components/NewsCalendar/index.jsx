@@ -2,13 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { Calendar } from '@material-ui/pickers';
 import { DatePicker } from '@material-ui/pickers';
 import cls from './Calendar.module.scss';
-import { Button } from '@material-ui/core/Button';
+import Button  from '@material-ui/core/Button';
 import RubricsNav from '../RubricsNav';
 
 const NewsCalendar = ({ onCalendarChange, touched, setTouched }) => {
   const [date, setDate] = useState(new Date());
 
   useEffect(() => {
+    console.log(date)
     touched && onCalendarChange(date);
   }, [date, touched]);
 

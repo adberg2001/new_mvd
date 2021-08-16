@@ -19,6 +19,7 @@ export default function NewsListSection({ last_news, title }) {
     const d = formattedDate.d.toString().padStart(2, '0');
     const m = formattedDate.m.toString().padStart(2, '0');
     const y = formattedDate.y;
+
     const _api = _date
       ? `${BASE_URL}/news/?created=${y}-${m}-${d}`
       : `${BASE_URL}/news`;

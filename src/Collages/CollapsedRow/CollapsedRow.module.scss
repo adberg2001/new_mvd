@@ -1,0 +1,52 @@
+.row {
+  min-height: 107px;
+  list-style: none;
+  background: #FAFAFA;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+
+  &__head {
+    height: 107px;
+
+    h5 {
+      font-size: 30px;
+      line-height: 35px;
+    }
+  }
+
+  &__image_wrapper {
+
+    @media only screen and (max-width: 768px) {
+      max-height: 300px;
+    }
+
+    > div {
+      position: unset !important;
+    }
+
+    .image {
+      object-fit: contain;
+      width: 100% !important;
+      position: relative !important;
+      height: unset !important;
+      @media only screen and (max-width: 768px) {
+        max-height: 250px !important;
+      }
+    }
+  }
+
+  &__content {
+    grid-gap: 30px;
+
+    a {
+      font-size: 24px;
+      color: #183F5B;
+      line-height: 26px;
+
+      @media only screen and (max-width: 596px) {
+        font-size: 20px;
+        line-height: 24px;
+      }
+    }
+  }
+}
