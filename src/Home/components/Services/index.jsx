@@ -59,7 +59,8 @@ const Services = ({ services }) => {
     <section className={'SliderContainer section'} id={'services'}>
       <h2 className={'section__heading'}>Услуги</h2>
       <Swiper breakpoints={breakPoints} navigation={true} className="mySwiper">
-        {windowSize > 828
+        {!!!services?.length ? null :
+          windowSize > 828
           ? renderDesktopSlides(services)
           : renderMobileSlides(services)}
       </Swiper>

@@ -1,1 +1,1 @@
-export const BASE_URL = 'http://176.126.166.188/api/ru';
+export const BASE_URL = 'https://test-zettasoft-domain.xyz/api/ru';

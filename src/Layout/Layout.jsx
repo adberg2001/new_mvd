@@ -17,7 +17,7 @@ export default function Layout({ children, links }) {
 
       <main>{children}</main>
 
-      {links && <UsefulLinks links={links} />}
+      {!!links && <UsefulLinks links={links} />}
 
       <Footer />
     </>

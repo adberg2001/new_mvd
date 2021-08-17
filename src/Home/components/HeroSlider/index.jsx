@@ -34,8 +34,8 @@ export default function HeroSlider({ on_main_slider }) {
         }}
         className={cls.swiperContainer}
       >
-        {!!results.length &&
-          results.map(({ images, id, title }) => {
+        {!!results?.length &&
+          results?.map(({ images, id, title }) => {
             return (
               <SwiperSlide key={id} className={cls.swiperSlide}>
                 {({ isActive }) => (
