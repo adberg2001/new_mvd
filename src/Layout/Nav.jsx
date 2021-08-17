@@ -69,7 +69,7 @@ export default function Nav() {
             <ul ref={menuRef} className={cls.navLinksMenu}>
               <li>
                 <Link href={"/management"}>
-                  <a>Руководсво</a>
+                  <a>Руководство</a>
                 </Link>
               </li>
               <li>
@@ -230,7 +230,7 @@ export default function Nav() {
         </li>
         <li>
           <Link href={"/gender-policy"}>
-            <a>Гендарная политика</a>
+            <a>Гендерная политика</a>
           </Link>
         </li>
         <li>
