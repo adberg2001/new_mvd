@@ -60,6 +60,7 @@ export default function Hero({ on_main_slider }) {
           height="110"
         />
 
+
         <h1>МИНИСТЕРСТВО ВНУТРЕННИХ ДЕЛ КЫРГЫЗСКОЙ РЕСПУБЛИКИ</h1>
 
         <HeroSlider on_main_slider={on_main_slider} />
