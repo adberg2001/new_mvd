@@ -2,6 +2,6 @@ module.exports = {
   reactStrictMode: false,
   distDir: "build",
   images: {
-    domains: ["164.90.170.123"],
+    domains: ["176.126.166.188"],
   },
 };

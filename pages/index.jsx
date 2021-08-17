@@ -33,7 +33,7 @@ export async function getServerSideProps() {
     data: { results: services },
   } = await axios.get(`${BASE_URL}/services`);
 
-  const { data: initialRegion } = await axios.get(`${BASE_URL}/regions/1/`);
+  const { data: initialRegion } = await axios.get(`${BASE_URL}/regions/1`);
 
   const { data: last_news } = await axios.get(`${BASE_URL}/news`);
 
