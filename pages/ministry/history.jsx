@@ -22,12 +22,12 @@ export default function History({ historyContent }) {
         <div>
           <h1>ИСТОРИЯ</h1>
 
-          <div
+          {!!historyContent && <div
             // className={'History'}
             dangerouslySetInnerHTML={{
               __html: historyContent.content,
             }}
-          />
+          />}
         </div>
       </section>
     </Layout>
