@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:app": "nx build app --outputPath",
     "start": "next start",
     "lint": "next lint"
   },
